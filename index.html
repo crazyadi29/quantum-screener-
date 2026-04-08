@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nifty Quantum Screener</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css?v=5">
+    
+    <!-- TradingView Lightweight Charts -->
+    <script src="https://unpkg.com/lightweight-charts@3.8.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div class="title-section">
+            <h1>Quantum Screener</h1>
+            <p>15m Market Breadth & Breakout Analysis API</p>
+        </div>
+        <div id="nifty-status-container">
+            <div class="nifty-status" style="border-color: var(--border);">
+                <div class="loader"></div>
+                <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-sub);">Analyzing Nifty Open...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="sidebar">
+            <div class="card sectors">
+                <h2>Top Sectors 
+                    <button id="refresh-sectors" style="background:none; border:none; color: var(--accent); cursor:pointer; font-size:0.85rem;">⟳ Refresh</button>
+                </h2>
+                <div id="sectors-list">
+                    <div class="loading-overlay">
+                        <div class="loader"></div>
+                        <span>Scanning Sectors...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="card main-card">
+                <h2 id="active-sector-title" style="margin-bottom: 1.5rem; font-size: 1.5rem;">Select a Sector</h2>
+                
+                <div id="stocks-container" class="stocks-grid">
+                    <div class="loading-overlay" style="display: none;" id="stocks-loader">
+                        <div class="loader"></div>
+                        <span>Analyzing Breakouts & Volumes...</span>
+                    </div>
+                    <!-- Stock Cards will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="/app.js?v=5"></script>
+</body>
+</html>
